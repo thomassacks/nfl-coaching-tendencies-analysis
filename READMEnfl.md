@@ -1,109 +1,112 @@
-NFL Team Early-Down Pass Rate Analysis (2024 Season)
+# 🏈 NFL Team Early-Down Pass Rate Analysis (2024 Season)
 
-OVERVIEW:
+---
+
+## 📋 Overview
 
 This project analyzes early-down (1st and 2nd down) passing tendencies of NFL teams during the 2024 regular season.
 
-Using play-by-play data from nflfastR, I calculated:
-
+Using play-by-play data from `nflfastR`, I calculated:
 - Each team's overall early-down pass rate
-
 - Each team's pass rate when Leading, Tied, and Trailing
 
 This provides insights into offensive philosophy, game-state adjustments, and coaching tendencies.
 
+---
 
+## 📂 Data Source
 
-DATA SOURCE:
+- **Dataset:** NFL play-by-play data (`nflfastR` package)
+- **Season:** 2024
+- **Plays Analyzed:** Only 1st and 2nd down run and pass plays (special teams and penalties excluded)
 
-Dataset: NFL play-by-play data (nflfastR package)
+---
 
-Season: 2024
+## ⚙️ Methodology
 
-Plays Analyzed: Only 1st and 2nd down run and pass plays (special teams, penalties excluded)
+- Pulled 2024 NFL play-by-play data using `nflfastR`.
+- Filtered for 1st and 2nd down plays where `play_type` was `"run"` or `"pass"`.
+- Grouped plays by offensive team (`posteam`).
+- Calculated:
+  - Total early-down plays
+  - Total early-down passes
+  - **Pass Rate** = (Pass Plays ÷ Total Plays)
+- Split early-down plays by game state:
+  - Leading
+  - Tied
+  - Trailing
+- Merged official NFL team colors for visualizations.
 
+---
 
+## 📈 Key Summary Statistics
 
-METHODOLOGY:
+- **Average Team Early-Down Pass Rate:** 52.4%
+- **Most Pass-Heavy Team:** Cleveland Browns — 61.7%
+- **Most Run-Heavy Team:** Philadelphia Eagles — 40.8%
 
-Pulled 2024 NFL play-by-play data using nflfastR.
+✅ These numbers show that while passing remains slightly favored league-wide on early downs, major differences exist:
+- **Cleveland** was notably aggressive.
+- **Philadelphia** skewed heavily toward the run.
 
-Filtered for 1st and 2nd down plays (down %in% c(1, 2)) where play_type was "run" or "pass."
+---
 
-Grouped plays by offensive team (posteam).
+## 🏆 Top 5 Most Pass-Heavy Teams (Early Downs)
 
-Calculated:
+1. Cleveland Browns — 61.7%
+2. Las Vegas Raiders — 61.1%
+3. Cincinnati Bengals — 61.0%
+4. Seattle Seahawks — 59.6%
+5. New York Jets — 58.5%
 
-- Total early-down plays
+---
 
-- Total early-down passes
+## 🚩 Bottom 5 Most Pass-Heavy Teams (Early Downs)
 
-- Pass rate = (Pass Plays ÷ Total Plays)
+1. Philadelphia Eagles — 40.8%
+2. Baltimore Ravens — 42.4%
+3. Green Bay Packers — 44.0%
+4. Pittsburgh Steelers — 46.3%
+5. Buffalo Bills — 47.0%
 
-Split early-down plays by game state:
+---
 
-- Leading
+## 📸 Visualizations
 
-- Tied
+### 1. Early-Down Pass Rate by Team (2024)
 
-- Trailing
+![Team Pass Rate](http://github.com/thomassacks/nfl-coaching-tendencies-analysis/blob/main/nfl-coaching-tendencies-chart.png)
 
-Merged official NFL team colors for clean visualizations.
+**Key Takeaways:**
+- **CLE, LV, CIN** led the NFL in early-down pass rates, consistently passing more than 60% of the time.
+- **PHI, BAL, GB** were among the most run-heavy teams on early downs.
+- Significant team-level differences suggest strong coaching philosophy impacts.
 
+---
 
-KEY SUMMARY STATISTICS:
+### 2. Early-Down Pass Rate by Game State (Leading, Tied, Trailing)
 
-- Average Team Early Down Pass Rate = 52.4%
+![Pass Rate by Game State](https://github.com/thomassacks/nfl-coaching-tendencies-analysis/blob/main/nfl-eay-down-pass-rate-by-game-state-graph.png)
 
-- Most Early Down Pass Heavy Team = Cleveland (61.7%)
+**Key Takeaways:**
+- **Trailing teams** (blue bars) consistently passed at the highest rates across all teams.
+- Even when **tied**, teams like **BUF** and **DET** maintained aggressive pass tendencies.
+- Some teams like **GB** and **PHI** remained run-focused even when trailing, highlighting system consistency.
 
-- Most Early Down Run Heavy Team = Philadelphia (40.8%)
+---
 
-These numbers show that while passing remains slightly favored league-wide on early downs, there are major differences across teams, with the Browns notably aggressive and the Eagles skewing heavily toward the run.
+## 🚀 Future Improvements
 
-Top 5 Most Pass-Heavy Teams on Early Downs:
-
-1. Cleveland Browns - 61.7%
-
-2. Las Vegas Raiders - 61.1%
-
-3. Cincinnati Bengals - 61.0%
-
-4. Seattle Seahawks - 59.6%
-
-5. New York Jets - 58.5%
-
-Bottom 5 Most Pass-Heavy Teams on Early Downs:
-
-1. Philadelphia Eagles - 40.8%
-
-2. Baltimore Ravens - 42.4%
-
-3. Green Bay Packers - 44.0%
-
-4. Pittsburg Steelers - 46.3%
-
-5. Buffalo Bills - 47.0%
-
-(Visualizations attached)
-
-
-Future Improvements:
-
-Add breakdowns by:
-
-- Field position (inside own territory, midfield, red zone)
-
-- Quarter (early vs late game)
-
+- Add breakdowns by:
+  - Field position (own territory vs midfield vs red zone)
+  - Game quarter (early vs late game)
 - Compare trends across multiple seasons (2022–2024).
-
 - Build an interactive dashboard (Tableau or Shiny App).
 
+---
 
-Contact
+## 📬 Contact
 
 Feel free to reach out to connect or collaborate:
-Email | thomasbsacks@gmail.com
-LinkedIn | https://www.linkedin.com/in/thomas-sacks/
-
+- 📧 Email: thomasbsacks@gmail.com
+- 💼 LinkedIn: [Thomas Sacks](https://www.linkedin.com/in/thomas-sacks/)
